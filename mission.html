@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Statement - Ministry of Culture</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #ff6b01, #ff8533);
+            min-height: 100vh;
+            border: 15px solid #1a237e;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 5px solid #fff;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .mission-header {
+            background: linear-gradient(45deg, #1a237e, #283593);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            border: 3px solid #fff;
+            text-align: center;
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .mission-content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 3px solid #1a237e;
+        }
+
+        .mission-section {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 30px;
+            border-left: 4px solid #ff6b01;
+        }
+
+        .mission-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: #1a237e;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: #ff6b01;
+            font-size: 24px;
+        }
+
+        .mission-text {
+            color: #333;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .objectives-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .objective-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b01;
+            transition: all 0.3s ease;
+        }
+
+        .objective-item:hover {
+            transform: translateX(10px);
+            background: #fff5e6;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .highlight-box {
+            background: linear-gradient(45deg, #1a237e, #283593);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .highlight-text {
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Decorative elements */
+        .container:before,
+        .container:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #1a237e;
+        }
+
+        .container:before {
+            top: 10px;
+            left: 10px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .container:after {
+            bottom: 10px;
+            right: 10px;
+            border-left: none;
+            border-top: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+                border-width: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .mission-header {
+                padding: 20px;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+            .mission-content {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .mission-text {
+                font-size: 1rem;
+            }
+
+            .highlight-text {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mission-header">
+            <h1 class="title">Mission Statement</h1>
+        </div>
+
+        <div class="mission-content">
+            <div class="mission-section">
+                <h2 class="section-title">
+                    <i class="fas fa-bullseye"></i>
+                    Our Mission
+                </h2>
+                <p class="mission-text">
+                    To preserve, promote and disseminate all forms of art and culture of India through a series of well-planned initiatives and frameworks. We aim to promote cultural heritage and encourage cultural understanding between various regions, creating a harmonious cultural environment in the country.
+                </p>
+            </div>
+
+            <div class="highlight-box">
+                <p class="highlight-text">
+                    "Preserving our rich cultural heritage while fostering innovation and creativity for future generations"
+                </p>
+            </div>
+
+            <div class="mission-section">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i>
+                    Key Objectives
+                </h2>
+                <ul class="objectives-list">
+                    <li class="objective-item">
+                        Preserve and promote India's rich cultural heritage through various initiatives and programs
+                    </li>
+                    <li class="objective-item">
+                        Support and encourage cultural activities at various levels
+                    </li>
+                    <li class="objective-item">
+                        Maintain and conserve ancient monuments and historical sites
+                    </li>
+                    <li class="objective-item">
+                        Promote cultural awareness and understanding among the youth
+                    </li>
+                    <li class="objective-item">
+                        Foster cultural exchanges at both national and international levels
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mission-section">
+                <h2 class="section-title">
+                    <i class="fas fa-handshake"></i>
+                    Our Commitment
+                </h2>
+                <p class="mission-text">
+                    We are committed to protecting, preserving, and promoting India's cultural heritage in all its rich diversity. Through various schemes and programs, we work towards making cultural activities accessible to all sections of society while ensuring the preservation of our invaluable cultural assets for future generations.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

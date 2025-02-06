@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's Who - Ministry of Culture</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff6b01, #ff8533);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 0;
+            border: 15px solid #1a237e; /* Main page border */
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 5px solid #fff; /* Container border */
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #ffffff; /* Changed to white text for better contrast */
+            margin: 40px 0 60px;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            padding: 20px;
+            border: 3px solid #ffffff; /* Changed border to white */
+            border-radius: 15px;
+            background: linear-gradient(135deg, #1a237e, #283593); /* Blue gradient background */
+        }
+
+        .page-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #ffffff; /* Changed to white */
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        .page-title:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ffffff; /* Changed to white */
+            top: -3px;
+            left: -3px;
+            border-right: none;
+            border-bottom: none;
+            border-radius: 5px 0 0 0;
+        }
+
+        .page-title:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ffffff; /* Changed to white */
+            bottom: -3px;
+            right: -3px;
+            border-left: none;
+            border-top: none;
+            border-radius: 0 0 5px 0;
+        }
+
+        .header-container {
+            position: relative;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(45deg, #1a237e, #283593); /* Matching blue gradient */
+            border-radius: 20px;
+            border: 2px solid #ffffff; /* Changed to white border */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .header-decoration {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #ffffff; /* Changed to white */
+            opacity: 0.5;
+        }
+
+        .decoration-1 {
+            top: 10px;
+            left: 10px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .decoration-2 {
+            bottom: 10px;
+            right: 10px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            border: 3px solid #1a237e; /* Profile card border */
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .card-header {
+            background: linear-gradient(45deg, #444447, #444447);
+            color: rgb(10, 4, 4);
+            padding: 25px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg) translate(50%, -50%);
+        }
+
+        .card-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: start;
+            position: relative;
+        }
+
+        .profile-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 4px solid #ff6b01; /* Image border */
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .profile-details h4 {
+            font-size: 2.2rem;
+            color: #1a237e;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 15px;
+            background: #fff;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0; /* Info item border */
+        }
+
+        .info-item:hover {
+            border-color: #ff6b01;
+            transform: translateX(5px);
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-item i {
+            color: #ff6b01;
+            font-size: 24px;
+            margin-top: 4px;
+        }
+
+        .info-item span {
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-item p {
+            color: #333;
+            font-weight: 500;
+            font-size: 16px;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 1024px) {
+            .card-content {
+                grid-template-columns: 250px 1fr;
+                gap: 30px;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+                padding: 15px;
+            }
+
+            .header-container {
+                padding: 15px;
+            }
+
+            .header-decoration {
+                width: 30px;
+                height: 30px;
+            }
+
+            .card-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                max-width: 300px;
+                margin: 0 auto;
+                border-width: 3px;
+            }
+
+            .card-header h3 {
+                font-size: 1.5rem;
+            }
+
+            .profile-details h4 {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+
+            body {
+                border-width: 10px; /* Thinner border on mobile */
+            }
+
+            .container {
+                padding: 15px;
+                border-width: 3px;
+            }
+
+            .info-item {
+                border-width: 1px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .card-header {
+                padding: 20px;
+            }
+
+            .card-content {
+                padding: 25px;
+            }
+        }
+
+        .profile-actions {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .download-vcard {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            background: #1a237e;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .download-vcard:hover {
+            background: #0d47a1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .download-vcard:active {
+            transform: translateY(0);
+        }
+
+        .download-vcard i {
+            font-size: 1.2rem;
+        }
+
+        .download-vcard.success {
+            background: #4caf50;
+        }
+
+        .download-vcard.success i {
+            animation: bounce 0.5s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .official-links {
+            padding: 60px 0;
+            background: linear-gradient(to bottom, #fff, #f8f9fa);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #1a237e;
+            margin-bottom: 40px;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #1a237e;
+            margin: 15px auto;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-card {
+            position: relative;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .logo-wrapper {
+            padding: 20px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+        }
+
+        .logo-wrapper img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .logo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 35, 126, 0.9);
+            color: white;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-card:hover .logo-overlay {
+            transform: translateY(0);
+        }
+
+        .visit-text {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .logo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .logo-wrapper {
+                height: 100px;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Column divider */
+        .card-content:before {
+            content: '';
+            position: absolute;
+            left: 300px; /* Adjust based on your first column width */
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: linear-gradient(to bottom, 
+                transparent, 
+                rgba(26, 35, 126, 0.2), 
+                transparent
+            );
+            display: none; /* Hidden by default, shown on larger screens */
+        }
+
+        @media (min-width: 1024px) {
+            .card-content:before {
+                display: block; /* Show divider on larger screens */
+            }
+        }
+
+        /* Add decorative corners to the container */
+        .container:before,
+        .container:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #1a237e;
+        }
+
+        .container:before {
+            top: 10px;
+            left: 10px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .container:after {
+            bottom: 10px;
+            right: 10px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Add subtle border animation on hover */
+        .profile-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.3) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .profile-card:hover:after {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        /* Add subtle gradient overlay */
+        .header-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        /* Add shimmer effect */
+        @keyframes shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 100% 0; }
+        }
+
+        .header-container:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.1),
+                transparent
+            );
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+            border-radius: 20px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-content">
+        <div class="container">
+            <div class="header-container">
+                <div class="header-decoration decoration-1"></div>
+                <h1 class="page-title">Who's Who</h1>
+                <div class="header-decoration decoration-2"></div>
+            </div>
+            
+            <!-- Minister Profile -->
+            <div class="profile-card">
+                <div class="card-header">
+                    <h3>Hon'ble Minister of Culture</h3>
+                </div>
+                <div class="card-content">
+                    <div class="profile-image">
+                        <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/Gajendra_Singh_Shekhawat_13062024.jpg" 
+                             alt="Shri Gajendra Singh Shekhawat">
+                    </div>
+                    <div class="profile-details">
+                        <h4>Shri Gajendra Singh Shekhawat</h4>
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <span>Phone (Office)</span>
+                                    <p>+91 2338 6765<br>+91 11 23381539</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-fax"></i>
+                                <div>
+                                    <span>Fax</span>
+                                    <p>+91 11 23385115</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span>Email</span>
+                                    <p>gsingh.shekhawat@gov.in</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span>Address</span>
+                                    <p>Room No. 501, 'C' Wing<br>Shastri Bhawan, New Delhi-110001</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-actions">
+                            <a href="#" class="action-btn view-profile" onclick="viewProfile('minister')">
+                                <i class="fas fa-user"></i>
+                                <!--span>View Profile</span-->
+                            </a>
+                            <button onclick="downloadVCard(ministerData)" class="download-vcard">
+                                <i class="fas fa-address-card"></i>
+                                <span>Download Contact</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Minister of State Profile -->
+            <div class="profile-card">
+                <div class="card-header">
+                    <h3>Minister of State for Culture</h3>
+                </div>
+                <div class="card-content">
+                    <div class="profile-image">
+                        <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/Rao_Inderjit_Singh_02072024.jpeg" 
+                             alt="Rao Inderjit Singh">
+                    </div>
+                    <div class="profile-details">
+                        <h4>Rao Inderjit Singh</h4>
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <span>Phone (Office)</span>
+                                    <p>+91 11 21402909<br>+91 11 23096561-62</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-fax"></i>
+                                <div>
+                                    <span>Fax</span>
+                                    <p>+91 11 23011772</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span>Email</span>
+                                    <p>mos-culture@gov.in</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span>Address</span>
+                                    <p>IGNCA, Janpath Building<br>Janpath, New Delhi-110001</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-actions">
+                            <a href="#" class="action-btn view-profile" onclick="viewProfile('minister-state')">
+                                <i class="fas fa-user"></i>
+                                <!--span>View Profile</span-->
+                            </a>
+                            <button onclick="downloadVCard(mosData)" class="download-vcard">
+                                <i class="fas fa-address-card"></i>
+                                <span>Download Contact</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add this section after the profile cards -->
+            <section class="official-links">
+                <div class="container">
+                    <h2 class="section-title">Official Websites & Resources</h2>
+                    <div class="logo-grid">
+                        <!-- National Culture Fund -->
+                        <a href="http://ncf.nic.in/" target="_blank" rel="noopener" class="logo-card">
+                            <div class="logo-wrapper">
+                                <img width="187" height="71" 
+                                     src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/national-culture-fund.jpg" 
+                                     alt="National Culture Fund">
+                            </div>
+                            <div class="logo-overlay">
+                                <span class="visit-text">Visit National Culture Fund</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+
+                        <!-- India.gov.in -->
+                        <a href="https://india.gov.in/" target="_blank" rel="noopener" class="logo-card">
+                            <div class="logo-wrapper">
+                                <img width="187" height="71" 
+                                     src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/india-gov-in.jpg" 
+                                     alt="National Portal of India">
+                            </div>
+                            <div class="logo-overlay">
+                                <span class="visit-text">Visit National Portal</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+
+                        <!-- Incredible India -->
+                        <a href="http://www.incredibleindia.org/" target="_blank" rel="noopener" class="logo-card">
+                            <div class="logo-wrapper">
+                                <img width="187" height="71" 
+                                     src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/incredible-india.jpg" 
+                                     alt="Incredible India">
+                            </div>
+                            <div class="logo-overlay">
+                                <span class="visit-text">Visit Incredible India</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+
+                        <!-- Museums of India -->
+                        <a href="http://museumsofindia.gov.in/" target="_blank" rel="noopener" class="logo-card">
+                            <div class="logo-wrapper">
+                                <img width="187" height="71" 
+                                     src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/nmi.jpg" 
+                                     alt="Museums of India">
+                            </div>
+                            <div class="logo-overlay">
+                                <span class="visit-text">Visit Museums of India</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+
+                        <!-- MyGov India -->
+                        <a href="https://mygov.in/" target="_blank" rel="noopener" class="logo-card">
+                            <div class="logo-wrapper">
+                                <img width="187" height="71" 
+                                     src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/banner_footer.jpg" 
+                                     alt="MyGov India">
+                            </div>
+                            <div class="logo-overlay">
+                                <span class="visit-text">Visit MyGov India</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+    // Add this JavaScript for functionality
+    function viewProfile(type) {
+        const button = event.currentTarget;
+        button.classList.add('loading');
+        
+        // Simulate loading
+        setTimeout(() => {
+            if (type === 'minister') {
+                window.location.href = '/minister-profile';
+            } else if (type === 'minister-state') {
+                window.location.href = '/minister-state-profile';
+            }
+            button.classList.remove('loading');
+        }, 800);
+    }
+
+    function downloadVCard(person) {
+        // Create vCard content with proper formatting
+        const vCard = `BEGIN:VCARD
+VERSION:3.0
+N:${person.name};;;;
+FN:${person.name}
+TITLE:${person.title}
+ORG:Ministry of Culture\, Government of India
+TEL;TYPE=WORK,VOICE:${person.phone}
+TEL;TYPE=WORK,FAX:${person.fax}
+EMAIL;TYPE=WORK,INTERNET:${person.email}
+ADR;TYPE=WORK:;;${person.address};;;;India
+END:VCARD`;
+
+        // Create Blob with correct MIME type
+        const blob = new Blob([vCard], { type: 'text/vcard;charset=utf-8' });
+        
+        try {
+            // Create download link
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', `${person.name.replace(/\s+/g, '_')}.vcf`);
+            
+            // Trigger download
+            document.body.appendChild(link);
+            link.click();
+            
+            // Cleanup
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+            
+            // Show success feedback
+            const button = document.querySelector('.download-vcard');
+            button.classList.add('success');
+            setTimeout(() => button.classList.remove('success'), 2000);
+            
+        } catch (error) {
+            console.error('Error creating vCard:', error);
+            alert('Sorry, there was an error creating the vCard. Please try again.');
+        }
+    }
+
+    // Define contact data
+    const ministerData = {
+        name: "Shri G. Kishan Reddy",
+        title: "Hon'ble Minister of Culture",
+        phone: "+91-11-23386765",
+        fax: "+91-11-23386768",
+        email: "minister-culture@gov.in",
+        address: "Ministry of Culture, Shastri Bhawan, New Delhi-110001"
+    };
+
+    const mosData = {
+        name: "Smt. Meenakashi Lekhi",
+        title: "Hon'ble Minister of State for Culture",
+        phone: "+91-11-23011772",
+        fax: "+91-11-23011772",
+        email: "mos-culture@gov.in",
+        address: "IGNCA, Janpath Building, Janpath, New Delhi-110001"
+    };
+    </script>
+</body>
+</html>
