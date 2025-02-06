@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #0d47a1;
+            padding: 0;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            border-bottom: 1px solid white;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #1565c0;
+            transform: translateX(5px);
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+
+        .content h2 {
+            background-color: #0d47a1;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        #about-title, #welcome-message {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .content:hover #about-title, .content:hover #welcome-message {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+
+        .animate-on-scroll.animate {
+            opacity: 1;
+        }
+
+        .last-updated {
+            text-align: right;
+            font-size: 14px;
+            color: #777;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">› History</a></li>
+            <li><a href="#">› Policy</a></li>
+            <li><a href="#">› CSL Mission</a></li>
+            <li><a href="#">› CSL Vision</a></li>
+            <li><a href="#">› Organisation Chart</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2 id="about-title">About Us</h2>
+        <p id="welcome-message" class="animate-on-scroll">The Central Secretariat Library (CSL), Ministry of Culture, Government of India welcomes you to this site, which will act as a portal to most of the Government of India Libraries. The Portal is in making and it will be updated from time to time. Your suggestions will help us to improve the contents of the site. Please do not hesitate to send your views to mailfromcsl[at]gmail[dot]com. You may also write to the Director, Central Secretariat Library, “G”-Wing, Shastri Bhawan, New Delhi – 110001. Telephone: 91 - 11 - 23389684.</p>
+
+        <p class="animate-on-scroll">The site contains the past History of CSL and it also provides a guided tour and its activities. The Library Rules provide a summarized view of CSL and its services. It also provides a brief idea about the Collection Development Policy of the library.</p>
+
+        <p class="animate-on-scroll">CSL has a collection of about 8,50,000 volumes. This includes the collection of the Regional Language Library and the RK Puram branch library. RK Puram branch library has a textbook collection for undergraduate students.</p>
+
+        <p class="animate-on-scroll">The catalogue of the library i.e. holding data is available in electronic form within the premises and also on the web OPAC.</p>
+
+        <p class="animate-on-scroll">CSL also undertook a project in which the full text of Government of India Gazette notifications, 1922-2001, has been digitized. The digital data of the Gazette of India is available in the e-gazette portal of the Department of Publication. Other categories of Government publications i.e. Committee Commission Reports available in CSL are fully digitized and available on the web.</p>
+
+        <p class="animate-on-scroll">Area Study Division of the CSL has a large research collection on different countries of the world and regions of India. The rare book collection of this division has more than 6,500 titles. CSL also has a collection of microfilms of official publications released during the British period. Two newspapers i.e. Times of India 1951 to 1998 and Nav Bharat Times 1950-1998 are also available for its users.</p>
+
+        <p class="animate-on-scroll">Foreign Official Documents Division (FOD) regularly acquires publications of international agencies such as the United Nations, IMF, and World Bank etc. It also receives official publications from the British Government, USA, Australia and certain other countries.</p>
+
+        <p class="animate-on-scroll">CSL has also published a compendium of Government of India reports on Library and Information Services. It has also published the report of the Review Committee on Library Staff of the Central Government, based on 4th Pay Commission recommendations.</p>
+
+        <div class="last-updated">Last updated on: 16-11-2019</div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var elements = document.querySelectorAll('.animate-on-scroll');
+        elements.forEach(function(element) {
+            if (isElementInViewport(element)) {
+                element.classList.add('animate');
+            }
+        });
+    });
+
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+</script>
+
+</body>
+</html>
