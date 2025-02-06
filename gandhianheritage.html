@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schemes - Ministry of Culture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #ed8f0c;
+            padding: 20px;
+            border-bottom: 2px solid #1b1816; /* Orange line at the bottom of the header */
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-left img {
+            height: 60px; /* Adjust based on your image size */
+            margin-right: 10px;
+        }
+
+        .ministry-text {
+            margin: 0;
+        }
+
+        .ministry-text h1 {
+            margin: 0;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .ministry-text p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .logos-right img {
+            height: 70px; /* Adjust based on your image size */
+            margin-left: 10px;
+        }
+
+        nav {
+            background-color: #f8d7a6;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #d9534f;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            flex: 1; /* This ensures main content pushes footer to the bottom */
+        }
+
+        .scheme-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .scheme-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            animation: fadeIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .scheme-list li:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+
+        .scheme-list li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        footer {
+            background-color: #f8d7a6;
+            color: #333;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto; /* This pushes the footer to the bottom */
+        }
+
+        /* New section styles */
+        .gandhi-heritage {
+            background-color: #f5a623;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .gandhi-breadcrumbs {
+            background-color: #f8d7a6;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .gandhi-breadcrumbs a {
+            color: #d9534f;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .gandhi-breadcrumbs span {
+            color: #b30000;
+        }
+
+        .gandhi-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .gandhi-links a {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .gandhi-links a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-left">
+                <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/logo.png" alt="Ministry of Culture Logo">
+                <div class="ministry-text">
+                    
+                </div>
+            </div>
+            <div class="logos-right">
+                <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/logo-gandhi.png" alt="150 Years of Celebrating the Mahatma">
+                <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/english-logo_03012025.png" alt="International Year of Cooperatives 2025">
+            </div>
+        </div>
+        <nav>
+            <a href="/">Home</a> >
+            <a href="schemes.html">Schemes</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="gandhi-heritage">Gandhian Heritage</div>
+        <div class="gandhi-breadcrumbs">
+            <a href="/">Home</a> >
+            <a href="/commemorations">Commemorations</a> >
+            <a href="/future">Future</a> >
+            <span>Mahatma Gandhi</span>
+        </div>
+        <div class="gandhi-links">
+            <a href="https://www.gandhiheritageportal.org/">Gandhi Heritage Portal</a>
+            <a href="dandimemorial.html">Dandi Memorial</a>
+            <a href="https://www.indiaculture.gov.in/gandhian-heritage-sites">Sites</a>
+            <a href="commitee.html">Committee</a>
+            <a href="https://www.indiaculture.gov.in/gandhi-heritage-site-mission-archives">Archives</a>
+        </div>
+        <p>In April, 2006, the Ministry of Culture constituted a Gandhi Heritage Sites Panel under the Chairmanship of Shri Gopalkrishna Gandhi, Ex-Governor of West Bengal. The Panel submitted its report to the Ministry on 26th November, 2008 which was accepted by the Government. The Report identified 39 core sites and a Master List consisting of 2000 sites visited by Mahatma Gandhi with the recommendation that the 39 Core Sites as well as some more important sites from the Master List required to be preserved for posterity. The Panel recommended the setting up of a “Gandhi Heritage Sites Mission” with a fixed term of 5 years</p>
+        <p>Broadly, the Mission’s tasks were envisaged as:</p>
+        <ul>
+            <li>The identification, collation and assessment of information on ‘Gandhi Heritage’ material for its management and deployment.</li>
+            <li>The determination of conservation methodology and priorities, for:
+                <ul>
+                    <li>the holdings: documents and objects, particularly from the points of view of archival storage and musicology.</li>
+                    <li>the physical structures and sites, and guidelines for their subsequent maintenance.</li>
+                </ul>
+            </li>
+            <li>The dissemination of material, based on relevant information from (i) and (ii), through:
+                <ul>
+                    <li>A web-based portal</li>
+                    <li>Publications, audio/visuals (CDs, digital prints etc.)</li>
+                </ul>
+            </li>
+            <li>The “communication” through the core sites while specifying – where necessary – function and use and significance of the site.</li>
+        </ul>
+        <p>The Government of India established the Gandhi Heritage Sites Mission on 29th July, 2013. Shri Sailesh Kumar Bandopadhaya has been nominated as Chairman of the Mission with Shri Prof. Tridip Suhrud, Shri Kartikeya Sarabhai, Dr. Sudarshan Iyengar, Shri Anupam Mishra, Prof. Shahid Amin and Prof. Venu Madhav Govindu as Members.</p>
+        <p>The Mission Secretariat is to be headed by a Joint Secretary to Government of India who will act as Secretary to the Mission. The Mission will have its headquarters at New Delhi. In order to strengthen links with State Governments and to coordinate the implementation of the Mission’s projects, the Zonal Cultural Centers (North, South, East, West and Central Zone) under the Ministry of Culture, will be associated with the Mission.</p>
+        <p>Following up on one of the recommendations of the Gandhi Heritage Sites Panel, the Gandhi Heritage Portal has been set up by the Government of India. The portal is hosted on the Ministry’s website and has been designed and developed by the Sabarmati Ashram Preservation and Memorial Trust (SAPMT), Ahmedabad. The Trust also maintains the Portal. Documents related to Mahatma Gandhi in India and abroad are being compiled and placed on the Portal which will serve as an Electronic Library of Gandhiji’s life and achievements. The central objective of the Portal is to preserve and perpetuate his invaluable heritage with proper research and in an authentic manner. The Ministry of Culture has released a corpus fund of Rs. 7.5 crore to SAPMT, Ahmedabad. The Portal was launched by Hon’ble Prime Minister on 2nd September, 2013.</p>
+        <p>The Gandhi Heritage Sites Mission will take up projects related to its terms of reference. Rs.26.82 crores has been sanctioned for the Mission spread over a period of 5 years i.e. upto the 31.3.2026</p>
+        
+    </main>
+    
+    <footer>
+        <p>© 2023 Ministry of Culture, Government of India. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            console.log('Page has loaded and script is running.');
+        });
+    </script>
+</body>
+</html>

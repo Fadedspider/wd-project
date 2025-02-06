@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Mission for Manuscripts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-image: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        header .top-bar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 2;
+        }
+
+        header .top-bar .date-time {
+            margin: 0 20px;
+            font-size: 1.1em;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            z-index: 2;
+        }
+
+        header .logo img {
+            height: 50px;
+            margin-right: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        header nav {
+            background-color: rgba(223, 166, 166, 0.9);
+            width: 100%;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 2;
+        }
+
+        header nav.active {
+            transform: translateY(0);
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        header nav ul li {
+            margin: 10px 5px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        header nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        header nav ul li a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .main-content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slider {
+            position: relative;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .slider img:hover {
+            transform: scale(1.1);
+        }
+
+        .slider .logo {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 50%;
+            opacity: 0;
+            animation: fadeInLogo 1s ease-in 0.5s forwards;
+        }
+
+        @keyframes fadeInLogo {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .events, .info-box, .links {
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in 1s forwards;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .events {
+            background-color: #4b0000;
+            color: white;
+        }
+
+        .info-box {
+            background-color: #f8e0e0;
+            border: 1px solid #e0b0b0;
+        }
+
+        .links {
+            background-color: #8b0000;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .links a {
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+            flex: 1 1 150px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .links a:hover {
+            transform: translateY(-5px);
+        }
+
+        .side-by-side-images {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .side-by-side-images div {
+            flex: 0 0 calc(33.333% - 20px);
+            margin: 10px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-in 1.5s forwards;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .side-by-side-images img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            max-height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .side-by-side-images img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #f8d7a6;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-in 2s forwards;
+            border-top: 1px solid #e0b0b0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: #4b0000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #8b0000;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #4b0000;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .side-by-side-images div {
+                flex: 0 0 calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .side-by-side-images div {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="date-time" id="dateTime"></div>
+        </div>
+        <div class="logo">
+            <img src="https://namami.gov.in/sites/all/themes/namami/logo.png" alt="National Mission for Manuscripts Logo">
+            <h1>National Mission for Manuscripts</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#manuscripts">INDIAN MANUSCRIPTS</a></li>
+                <li><a href="#partners">PARTNERS</a></li>
+                <li><a href="#publications">PUBLICATIONS</a></li>
+                <li><a href="#events">EVENTS</a></li>
+                <li><a href="#exhibition">EXHIBITION</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#links">USEFUL LINKS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="slider">
+            <img src="https://www.namami.gov.in/sites/default/files/namami_banner_2.jpg" alt="Manuscripts">
+            <div class="logo">
+                <img src="https://www.namami.gov.in/sites/all/themes/namami/images/flipbook.gif" alt="Vijñānanidhi Logo">
+            </div>
+        </div>
+        <section class="events">
+            <h2>FORTHCOMING EVENTS</h2>
+            <div class="event">
+                <div class="event-date">01 Mar 2023</div>
+                <div class="event-title">"Indic Manuscripts in Japan" by Prof. Shobha Rani Dash, Otani University, Japan</div>
+            </div>
+            <a href="#events" class="view-all">View All</a>
+        </section>
+        <section class="info-box">
+            <p>The National Mission for Manuscripts was established in February 2003, by the Ministry of Tourism and Culture, Government of India. A unique project in its programme and mandate, the Mission seeks to unearth and preserve the vast manuscript wealth of India. India possesses an estimate of ten million manuscripts, probably the largest collection in the world. These cover a variety of themes, textures and aesthetics, scripts, languages, calligraphies, illuminations and illustrations <a href="#read-more">Read more...</a></p>
+        </section>
+        <section class="links" id="links">
+            <a href="#documentation">Documentation Of Manuscripts</a>
+            <a href="#studies">Manuscript Studies</a>
+            <a href="#conservation">Conservation</a>
+            <a href="#digitization">Digitization</a>
+            <a href="#publication">Publication</a>
+            <a href="#outreach">Outreach</a>
+            <a href="#focus">Manuscripts In Focus</a>
+        </section>
+        <section class="side-by-side-images">
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhvuVImZv6tMoUP2fCZVez374ZLKP5zZ4PGg&s" alt="Pandulipat Patala">
+                <p><a href="#search">Click To Search Digital Manuscripts / Manuscripts From Catalogue</a></p>
+            </div>
+            <div>
+                <img src="https://seanmcdowell.org/assets/meta_img/Manuscript_200119_193611.jpg" alt="Do You Have Manuscripts">
+                <p><a href="#submit">DO YOU HAVE MANUSCRIPTS</a></p>
+            </div>
+            <div>
+                <img src="https://m.media-amazon.com/images/I/71TqskNld0L._AC_UF1000,1000_QL80_.jpg" alt="Memory of the World">
+                <p><a href="#memory">MEMORY OF THE WORLD</a></p>
+            </div>
+        </section>
+        <section class="links">
+            <a href="#catalogus">Catalogus Catalogorum</a>
+            <a href="#rti">RTI</a>
+            <a href="#downloads">Downloads</a>
+            <a href="#calendar">Calendar of events</a>
+            <a href="#sitemap">SiteMap</a>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="#disclaimer">Disclaimer</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Term and Conditions</a>
+            <a href="#manager">Web Information Manager</a>
+            <a href="#accessibility">Accessibility Statement</a>
+            <a href="#copyright">Copyright Policy</a>
+        </div>
+        <div class="copyright">
+            <p>© 2016 National Mission for Manuscripts, [All Rights Reserved]</p>
+            <p>Designed, & Developed by National Mission for Manuscripts</p>
+            <p>This is the official website of "Namami". Namami is an acronym for National Mission for Manuscripts, Government of India.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update the date and time in real-time
+            function updateDateTime() {
+                const dateTimeElement = document.getElementById('dateTime');
+                if (dateTimeElement) {
+                    const now = new Date();
+                    dateTimeElement.textContent = now.toLocaleString();
+                }
+            }
+
+            // Initial update
+            updateDateTime();
+            // Update every second
+            setInterval(updateDateTime, 1000);
+
+            // Nav bar animation
+            const nav = document.querySelector('header nav');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    nav.classList.add('active');
+                } else {
+                    nav.classList.remove('active');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Image hover effect
+            const images = document.querySelectorAll('.side-by-side-images img');
+            images.forEach(img => {
+                img.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                img.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

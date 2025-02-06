@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schemes - Ministry of Culture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #ed8f0c;
+            padding: 20px;
+            border-bottom: 2px solid #1b1816; /* Orange line at the bottom of the header */
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-left img {
+            height: 60px; /* Adjust based on your image size */
+            margin-right: 10px;
+        }
+
+        .ministry-text {
+            margin: 0;
+        }
+
+        .ministry-text h1 {
+            margin: 0;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .ministry-text p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .logos-right img {
+            height: 70px; /* Adjust based on your image size */
+            margin-left: 10px;
+        }
+
+        nav {
+            background-color: #f8d7a6;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #d9534f;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            flex: 1; /* This ensures main content pushes footer to the bottom */
+        }
+
+        .scheme-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Animation for scheme list items */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .scheme-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            animation: fadeIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .scheme-list li:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+
+        .scheme-list li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .scheme-list li a:hover {
+            background-color: #e9ecef;
+        }
+
+        /* To stagger the animation for each list item */
+        .scheme-list li:nth-child(1) { animation-delay: 0.1s; }
+        .scheme-list li:nth-child(2) { animation-delay: 0.2s; }
+        .scheme-list li:nth-child(3) { animation-delay: 0.3s; }
+        footer {
+            background-color: #f8d7a6;
+            color: #333;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto; /* This pushes the footer to the bottom */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-left">
+                <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/logo.png" alt="Ministry of Culture Logo">
+                <div class="ministry-text">
+                </div>
+            </div>
+            <div class="logos-right">
+                <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/logo-gandhi.png" alt="150 Years of Celebrating the Mahatma">
+                <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/english-logo_03012025.png" alt="International Year of Cooperatives 2025">
+            </div>
+        </div>
+        <nav>
+            <a href="/">Home</a> >
+            <a href="/missions">Mission</a>
+        </nav>
+    </header>
+    
+    <main>
+        <ul class="scheme-list">
+            <li><a href="gandhianheritage.html">Gandhi Heritage Sites Mission</a></li>
+            <li><a href="manuscript.html">National Mission on Manuscripts</a></li>
+            <li><a href="nationalmission.html">National Mission on Cultural Mapping and Roadmap</a></li>
+        </ul>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Ministry of Culture, Government of India. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Placeholder for future JavaScript functionality
+            console.log('Page has loaded and script is running.');
+        });
+    </script>
+</body>
+</html>
