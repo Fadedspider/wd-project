@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literature and Folklore of India</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image:url(https://i.pinimg.com/736x/06/e6/56/06e656d237adf2b36a79c288179f6613.jpg);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-image: url(https://i.pinimg.com/736x/6d/0a/7d/6d0a7d986c51591d139cb4b1769bb0bb.jpg);
+            padding: 1em 0;
+            text-align: center;
+            color: #ddd;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            color:azure
+        }
+
+        nav {
+            background-image: url(https://i.pinimg.com/736x/74/26/42/74264276208178011c981d9924551d48.jpg); 
+            padding: 40px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+            overflow: hidden; /* For the ink-like spread effect */
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            padding: 10px 15px;
+            position: relative;
+            z-index: 2; /* Above the pseudo-element */
+        }
+
+        /* Pseudo-element for a decorative hover effect */
+        nav ul li::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(241, 95, 226, 0.7); /* Semi-transparent pink for the effect */
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+            z-index: 1; /* Below the text */
+        }
+
+        /* Hover effects */
+        nav ul li:hover {
+            transform: scale(1.1); /* Grow effect on hover */
+        }
+
+        nav ul li:hover::before {
+            width: 200px; /* Adjust as needed for the spread effect */
+            height: 200px; /* Adjust as needed for the spread effect */
+        }
+
+        nav ul li:hover a {
+            color: #000000; /* Black for contrast against the pink background */
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 5px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .button {
+            background-color: #c6d7e7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #001f3f;
+        }
+
+        footer {
+            background-color: #f6f6f6;
+            color: rgb(5, 5, 5);
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                transform: scale(1); /* Reset transform for mobile */
+            }
+
+            nav ul li::before {
+                width: 0;
+                height: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/logo.png" height="50px" style="float: left; margin-right: 10px;">
+        <h1>Literature and Folklore of India</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="folklore.html">Folklore</a></li>
+            <li><a href="museums.html">Museums & Antiques</a></li>
+            <li><a href="archives.html">Archives</a></li>
+            <li><a href="music.html">Music & Dance</a></li>
+            <li><a href="#literature">World Heritage</a></li>
+            <li><a href="#libraries.html">Libraries</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="folklore">
+            <h2>Exploring the Literature and Folklore of India</h2>
+            <p>The idea, the word, ‘folk’ has a wide range of understanding and connotations – ranging from ‘natural’ to ‘native’ to ‘traditional’ to ‘rural’ and in some cases ‘from the heart.’ The ‘outpourings from the heart’ of native or traditional people later takes the form of folklore.</p>
+            <p>All folklores are oral traditions, the lore, traditional knowledge and beliefs of cultures often having no written language and they are transmitted, generally, by word of mouth. Like the written literature, they contain both prose and verse narratives in addition to myths, dramas, rituals etc. All cultures have their own folklores. In contrast and traditionally, literature is understood to mean any written work.</p>
+            <p>All folklores do more than merely conveying heart-pourings of natives about the nature around them. They are often, nay, always the carriers of culture, of social mores, customs, and forms of behaviour – that is society, nay, life in a nutshell. Folklores contain the lofty thoughts of yore and highest metaphysical truths, normally incomprehensible to laymen, in subtle, story forms.</p>
+            <p>Literature, in written form, helps in preserving the folklores and oral traditions. But for the literature in this form, the world would have lost almost all the folk and oral traditions. Written books, as recordings of folklores, help in passing on the lofty thoughts and ideas to posterity with no or very little changes in contrast to oral traditions where they often get lost in transition. Literature also can highlight the relevance of the stories of the past to the generation of the present, something which the oral traditions cannot strongly do.</p>
+            <p>Indian Literature, compared to any other literature in the world, played a dominant role in the preservation and propagation of oral traditions and folklores. Very ancients of this land, India, were past masters of all art forms that is folk. Sama Veda, to name one, is probably the oldest form of folk music that has survived till date. Even if one takes Sama Veda as rusty folk music, then it is the finest and oldest folk music that the world has ever witnessed.</p>
+            <p>From the Epics of India, Ramayana and Mahabharata to Jataka tales of Buddhism to PanchaTantras and Hitopadesha to Katha Saritsagarain the medieval period to mystic songs of Bauls of Bengal to numerous works in almost all the main languages of India, the scholars, saints, and writers have kept the oral traditions and folklores alive by writing down many a tale.</p>
+            <p>What is more unique to Indian attempts over centuries in preserving the folklores is the role played by women in it. The roles played by Gargi and Maitreyi of the distant past to Andal of Tamil Nadu at the beginning of the previous millennium to Lalleswari of Kashmir to Molla of Nellore in Andhra Pradesh to AkkaMahadevi of Karnataka to Sahajo Bai, is nothing short of stellar.</p>
+            <p>India remains one of the world’s richest sources of folktales. Not merely folktales but all forms of oral traditions – proverbs, aphorisms, anecdotes, rumours, songs, impromptu folk street plays – mirror the culture and values of the land in which they take place. They have also helped in binding vastly differing mores and customs of even a single given place. India is one place where the speech of even the most illiterate farmer is filled with lofty thoughts and metaphors.</p>
+            <p>By preserving and adopting many a tale and numerous songs and plays peppered with the proverbs and aphorisms of the region, Indian Literature has played a huge role in binding together vast cultures in an unseen way. The role of Indian Literature in maintaining and fostering cultural unity and identity in the vast land such as India cannot be diminished.</p>
+            
+            <p>Indian folk literature holds out a strong and loud message for other parts of the world where these art forms have disappeared thick and fast in consonance with rapid industrialization and globalization. Folk literature and folk art forms are not merely carriers of culture or philosophical poems, but rather the expressions of strong self-reflections and deep insights accrued therein. Simple life, self-reflection, and treading the path of the righteous contained in traditions. Again, folk traditions are not merely platforms for holding high moral ground having no relevance to the present day reality. Several folk plays like ChaakiyarKoothu and VeethiNaatakam are used even today as satire plays and commentaries on the current social and political reality. Same holds true for many folk songs from the vast pages of Indian literature.</p>
+            <p>It is also true that when recorded and propagated in a printed form, these folk literatures also gain mass reach which is otherwise confined to a smaller space and reach out only to smaller groups and communities. Through medieval Indian literature to the 20th century, we see the reality of Indian literature holding up for oral traditions, contrary to popular perception when it is very true of European cultures and others where they have almost completely lost folk literature. The most recent example of this phenomenon we can see in the effort of the famous Rajasthani folklorist, Sri Vijay Dan Detha.</p>
+            <p>In the modern democratic India, folk literature is pursued both within the academia and outside it, unlike many other cultures. Efforts of Sahitya Akademi and other similar organizations form part of this collective attempt to preserve and disseminate Indian folk literature.</p>
+            <p>Sahitya Akademi, India’s premier institution of letters, is devoted to the preservation and promotion of Indian Literature in all the 24 languages recognized by it. The core of the Akademi’s work is translation among various Indian languages, including minor languages and dialects, with the objective of promoting cultural unity in India and enhancing regional cooperation in a vastly diverse country with so many languages, traditions, and cultures. The Sahitya Akademi also promotes Indian folk literature in all possible ways – by giving awards to folk literature; by holding conventions and giving awards in minor languages, languages without scripts, and tribal dialects; publishing folk stories in its journals in the form of second tradition; publishing folk literature books and has centres to preserve and promote oral traditions within India.</p>
+            <a href="https://www.sahitya-akademi.gov.in" class="button" target="_blank">For more information, please visit Sahitya Akademi</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Ministry of Culture, Government of India</p>
+
+    </footer>
+</body>
+</html>
