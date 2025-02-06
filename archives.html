@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="archives.css">
+    <title>ARCHIVES of India</title>
+    <style>
+         /* Base styles */
+         body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+            margin: 0;
+            padding: 0;
+            transition: background 0.5s ease; /* Smooth transition for background */
+        }
+
+        /* Header styles */
+        header {
+            background-image: url(https://img.freepik.com/free-photo/interior-zenana-mahal-city-palace-udaipur-rajasthan_53876-65513.jpg?t=st=1737903199~exp=1737906799~hmac=1a4f0252566c67f43054fa517d3515d31ec251a973120e45f3ebed8de22e8434&w=1380);
+            color: white;
+            padding: 30px;
+            position: relative;
+            text-align: center;
+            animation: fade-in 1s ease-out; /* Fade in animation */
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header img {
+            position: absolute;
+            top: 10px;
+            max-width: 150px;
+            height: auto;
+            transition: transform 0.3s ease; /* Hover effect for image */
+        }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Navigation styles */
+        nav {
+            margin-top: 20px;
+            background-image: url(https://i.pinimg.com/736x/0f/e5/0a/0fe50a82b053a9f91fd9f4476b56679a.jpg);
+            color: #131010;
+            animation: slide-up 0.5s ease-out;
+        }
+
+        @keyframes slide-up {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            animation: fade-in 1s ease-out;
+        }
+
+        nav ul li a {
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        nav ul li a:hover {
+            color: #e6e6e6;
+        }
+
+        /* Main content styles */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            animation: appear 0.5s ease-out;
+        }
+
+        @keyframes appear {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 2.5em;
+            margin: 0;
+            animation: scale-up 0.5s ease-out;
+        }
+
+        @keyframes scale-up {
+            from { transform: scale(0.95); }
+            to { transform: scale(1); }
+        }
+
+        h2 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 5px;
+            animation: slide-right 0.5s ease-out;
+        }
+
+        @keyframes slide-right {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .content-section {
+            margin-bottom: 30px;
+            animation: fade-in 1s ease-out;
+        }
+
+        .content-section p {
+            text-align: justify;
+        }
+
+        a {
+            color: #003366;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #001f3f;
+        }
+
+        /* Highlighted text */
+        .highlight {
+            background-color: #e6e6e6;
+            padding: 10px;
+            border-left: 3px solid #003366;
+            animation: highlight 0.5s ease-in-out;
+        }
+
+        @keyframes highlight {
+            0% { background-color: #fff; }
+            100% { background-color: #e6e6e6; }
+        }
+
+        /* Button styles */
+        .button {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            animation: button-fade 0.5s ease-out;
+        }
+
+        @keyframes button-fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button:hover {
+            background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+            color:#131010;
+            transform: scale(1.05);
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #003366;
+            color: white;
+            animation: fade-in 1s ease-out;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 1200px) {
+            .container {
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li {
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            header img {
+                max-width: 50px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            nav ul li a {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ARCHIVES of India</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Return to Homepage</a></li>
+            <li><a href="museums.html">Museum & Antique</a></li>
+            <li><a href="#world-heritage">World Heritage</a></li>
+            <li><a href="#music">Music & Dance</a></li>
+            <li><a href="#literature">Literature and Folklore</a></li>
+            <li><a href="#libraries">Libraries</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="content-section">
+            <h2>History</h2>
+            <p>The genesis of the National Archives of India can be traced back to 1860 when Sandeman, the Civil Auditor, suggested the establishment of a 'Grand Central Archive' to manage the congestion of documents. This idea took shape in 1889 when Professor G.W. Forrest was appointed to examine Foreign Department records. His work led to the creation of the Imperial Records Department (IRD) in 1891 in Calcutta, with Forrest as its first head. The IRD's primary tasks included cataloguing records and establishing a central library.</p>
+            <p>With the capital moving to New Delhi in 1911, the IRD relocated in 1926. Post-independence, it was renamed the National Archives of India, with new leadership under Dr. S.N. Sen, who opened up records for research and established a Conservation Research Laboratory in 1940. His tenure saw significant developments in archival practices until 1949.</p>
+            <p>Since then, the National Archives has expanded its scope, playing a pivotal role in preserving India's cultural and historical records, with branches in Bhopal, Jaipur, Puducherry, and Bhubaneswar.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Preservation</h2>
+            <p>The National Archives employs multiple strategies for document preservation, including preventive, curative, and restorative methods. The Conservation Research Laboratory, set up in 1941, has been instrumental in developing local restoration techniques and testing preservation materials. Notable innovations include the Solvent or Hand Lamination process and methods to restore ancient palm leaves.</p>
+            <p>Their microfilming program, ongoing for over three decades, is crucial for preventing document degradation due to use or aging. The Reprography Division ensures both scholar access and preservation through microfilming, with digital conversions for modern archival management systems.</p>
+            <p>For more detailed information, please visit <a href="https://www.nationalarchives.nic.in" target="_blank">www.nationalarchives.nic.in</a></p>
+        </section>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="https://www.nationalarchives.nic.in" class="button" target="_blank">Visit National Archives Website</a>
+        </div>
+    </div>
+    <footer>
+        © 2025 CULTURAL MINISTRY OF INDIA
+    </footer>
+</body>
+</html>

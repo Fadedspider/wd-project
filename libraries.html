@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuscript Libraries of India</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image:url(https://i.pinimg.com/736x/74/bc/a6/74bca656216ed20fd3780891d0079b44.jpg);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-image: url(https://i.pinimg.com/736x/51/fe/dd/51fedd045706ae6517ca8e536f31324e.jpg);
+            padding: 1em 0;
+            text-align: center;
+            color:linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            color:linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        nav {
+            background-image: url(https://i.pinimg.com/736x/41/84/53/41845304f3b598e06c29765a284498d3.jpg); 
+            padding: 40px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+            overflow: hidden; /* For the ink-like spread effect */
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            padding: 10px 15px;
+            position: relative;
+            z-index: 2; /* Above the pseudo-element */
+        }
+
+        /* Pseudo-element for a decorative hover effect */
+        nav ul li::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+            z-index: 1; /* Below the text */
+        }
+
+        /* Hover effects */
+        nav ul li:hover {
+            transform: scale(1.1); /* Grow effect on hover */
+        }
+
+        nav ul li:hover::before {
+            width: 200px; /* Adjust as needed for the spread effect */
+            height: 200px; /* Adjust as needed for the spread effect */
+        }
+
+        nav ul li:hover a {
+            color: #000000; /* Black for contrast against the gold background */
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 5px;
+        }
+
+        .library-item {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .library-image {
+            width: 30%;
+            margin-left: 20px;
+        }
+
+        .library-image img {
+            width: 100%;
+            height: auto;
+            float: right;
+        }
+
+        .library-info {
+            width: 70%;
+            padding-left:20px;
+        }
+
+        .library-info h3 {
+            color: #4a148c;
+            margin-top: 0;
+        }
+
+        .button {
+            background-color: #84bde3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+        }
+
+        footer {
+            background-color: #f3eff7;
+            color: rgb(12, 12, 12);
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                transform: scale(1); /* Reset transform for mobile */
+            }
+
+            nav ul li::before {
+                width: 0;
+                height: 0;
+            }
+
+            .library-item {
+                flex-direction: column;
+            }
+
+            .library-image {
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+
+            .library-image img {
+                float: none;
+                width: 100%; 
+            }
+
+            .library-info {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/logo.png" height="50px" style="float: left; margin-right: 10px;">
+        <h1>Manuscript Libraries of India</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="libraries.html">Libraries</a></li>
+            <li><a href="museums.html">Museums & Antiques</a></li>
+            <li><a href="archives.html">Archives</a></li>
+            <li><a href="music.html">Music & Dance</a></li>
+            <li><a href="literature.html">Literature and Folklore</a></li>
+            <li><a href="world heritage.html">world heritage</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="libraries">
+            <h2>Explore Manuscript Libraries</h2>
+
+            <div class="library-item">
+                <div class="library-image">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipM1QUubfEiAQZqe8nY8sC49xzYMosUQx_PORmRR=s1360-w1360-h1020" alt="Khuda Baksh Library">
+                </div>
+                <div class="library-info">
+                    <h3>Khuda Baksh Oriental Public Library, Patna</h3>
+                    <p>Close to the banks of the Ganges, in Patna, stands the Khuda Bakhsh Oriental Public Library. It opened to the public in October 1891 with a collection of 4,000 manuscripts. Today, it holds about 21,000 manuscripts and 2.5 lakh printed books. Declared an Institution of National Importance in 1969, it's a unique repository of Oriental literature.</p>
+                    <a href="https://kblibrary.bih.nic.in/" class="button">Read More</a>
+                </div>
+            </div>
+
+            <div class="library-item">
+                <div class="library-image">
+                    <img src="https://content3.jdmagicbox.com/v2/comp/delhi/v6/011pxx11.xx11.131228160838.k2v6/catalogue/delhi-public-library-sarojini-nagar-delhi-libraries-2ofeo40.jpg" alt="Delhi Public Library">
+                </div>
+                <div class="library-info">
+                    <h3>Delhi Public Library</h3>
+                    <p>Started as a UNESCO project in 1951 and inaugurated by Prime Minister Jawaharlal Nehru, this library has grown into a premier public library system in Delhi. It operates through an extensive network of zonal libraries, branches, and mobile services across the city.</p>
+                    <a href="https://dpl.gov.in/dpl-branches.php" class="button">Read More</a>
+                </div>
+            </div>
+
+            <div class="library-item">
+                <div class="library-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGKy1SzvhjjtbdCxwcYWBfrqAD0vxKYgLnGYMttH-AlS4lrisBnBCvNKWsxXaxDkEiWYPLcY4gJBzu72O_XXb4ktYXRKb7GsBkxohOdi6we9BWui7vVib943AJkNUQxvqqfMZ7jaGbsyLFoKpdQtBJUbo5yhAJlYlX7v63Qj4jxokfLgOnUdPcRoyu/s750/Saraswati%20Mahal%20Library%20inside%20Thanjavur%20Palace%20in%20Tamilnadu,%20India%20-%20A%20great%20source%20of%20historical%20books-3.jpg" alt="Sarasvati Mahal Library">
+                </div>
+                <div class="library-info">
+                    <h3>Thanjavur Maharaja Serfoji's Sarasvati Mahal Library</h3>
+                    <p>Located in Thanjavur, Tamil Nadu, this library is one of the oldest in Asia. It houses over 60,000 volumes, including a significant collection of Sanskrit manuscripts written in various scripts, focusing on literature, music, and medicine.</p>
+                    <a href="https://en.wikipedia.org/wiki/Saraswathi_Mahal_Library" class="button">Read More</a>
+                </div>
+            </div>
+
+            <div class="library-item">
+                <div class="library-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Front_view_of_Rampur_Raza_Library.jpg/1280px-Front_view_of_Rampur_Raza_Library.jpg" alt="Rampur Raza Library">
+                </div>
+                <div class="library-info">
+                    <h3>Rampur Raza Library</h3>
+                    <p>Founded in 1774 by Nawab Faizullah Khan, this library at Rampur is a treasure house of Indo-Islamic learning and art. It contains valuable manuscripts, historical documents, and Mughal miniature paintings.</p>
+                    <a href="https://en.wikipedia.org/wiki/Raza_Library" class="button">Read More</a>
+                </div>
+            </div>
+
+            <!-- Add more libraries as needed -->
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Ministry of Culture, Government of India</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>World Heritage sites in India</title>
+    <style>
+nav {
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    padding: 40px;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-image: url(https://i.pinimg.com/736x/24/95/67/249567d9bef0cd1102064262422f5130.jpg);
+    padding: 1em  0;
+    text-align: center;
+}
+
+h1 {
+    color: #fef8fb;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: rgb(31, 27, 28);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(4, 17, 21);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%);
+ background-blend-mode: screen;
+}
+
+/* Main Content Styles */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.main-content {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content h2, .main-content h3 {
+    color: #003366;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background-color: #dc7edd;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+}
+
+/* Images */
+img {
+    background-color: #f0f0f0;    
+}
+
+/* Heritage Sites Section */
+main {
+    padding: 20px;
+}
+
+.heritage-section {
+    margin-bottom: 40px;
+}
+
+.heritage-section h2 {
+    color: #4a148c;
+    margin-bottom: 20px;
+}
+
+.site-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.site {
+    border-bottom: none;
+    border-color: #333;
+}
+
+.site h3 {
+    color: #4a148c;
+}
+
+.site-image {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+    color: rgb(13, 13, 13);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 767px) {
+    .site-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+    
+</head>
+<body>
+    
+    <header>
+        <img src="https://www.indiaculture.gov.in/sites/all/themes/moc/logo.png" height="50px" style="float: left; margin-right: 10px;">
+        <h1>WORLD HERITAGE SITES IN INDIA</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Return to Homepage</a></li>
+            <li><a href="#world-heritage">Tangible Heritage</a></li>
+            <li><a href="#schemes">Intangible Heritage</a></li>
+            <li><a href="#memories-of-world">Memories of the World</a></li>
+            <li class="dropdown">
+                <a href="#heritage">Cultural Heritage</a>
+                <ul class="dropdown-content">
+                    <li><a href="museums.html">Museums & Antiques</a></li>
+                    <li><a href="archives.html">Archives</a></li>
+                    <li><a href="music.html">Music & Dance</a></li>
+                    <li><a href="literature.html">Literature and Folklore</a></li>
+                    <li><a href="libraries.html">Libraries</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="main-content">
+            <h2>EXPLORE HERITAGE SITES OF INDIA</h2>
+            
+            <!-- Cultural Heritage Sites -->
+            <section class="heritage-section" id="cultural-heritage">
+                <h2>Cultural Heritage Sites</h2>
+                <div class="site-list">
+                    <article class="site">
+                        <h3>Agra Fort</h3>
+                        <img src="https://media.istockphoto.com/id/1169494823/photo/agra-fort-medieval-indian-fort-at-agra-india-at-sunrise.jpg?s=612x612&w=0&k=20&c=yzuZBI1FACx8DP0ok_QGB-hmvktnTqc5DXjJ-EKOso0=" alt="Agra Fort" class="site-image" loading="lazy">
+                        <p>A 16th-century Mughal monument, showcasing architectural prowess with its red sandstone and intricate designs.</p>
+                        <a href="https://dpl.gov.in/dpl-branches." class="btn">Read More</a>
+                    </article>
+
+                    <article class="site">
+                        <h3>Ajanta Caves</h3>
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/ajanta-caves-chhatrapati-sambhaji-nagar-maharashtra-attr-hero-1?qlt=82&ts=1727010611256" alt="Ajanta Caves" class="site-image" loading="lazy">
+                       
+                        <p>Buddhist cave monuments from the 2nd century BCE to 480 CE feature stunning frescoes and sculptures.</p>
+                        <a href="https://dpl.gov.in/dpl-branche" class="btn">Read More</a>
+                    </article>
+
+                    <article class="site">
+                        <h3>Ellora Caves</h3>
+                        <img src="https://preview.redd.it/wbr64bwtqhs91.jpg?width=1080&crop=smart&auto=webp&s=549b164d47ef8582c09cfb81d9bb99f505470a3e" alt="Ellora Caves" class="site-image" loading="lazy">
+                        <p>Home to 34 caves representing Buddhism, Hinduism, and Jainism, built between the 6th and 10th centuries.</p>
+                        <a href="https://dpl.gov.in/dpl-branches" class="btn">Read More</a>
+                    </article>
+
+                    <article class="site">
+                        <h3>Taj Mahal</h3>
+                        <img src="https://th-thumbnailer.cdn-si-edu.com/KPHiwfaC7pBGVYeQOt3_RF6L4Dw=/800x450/filters:focal(1471x1061:1472x1062)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/b6/30/b630b48b-7344-4661-9264-186b70531bdc/istock-478831658.jpg" alt="Taj Mahal" class="site-image" loading="lazy">
+                        <p>An iconic mausoleum built in the 17th century by Shah Jahan in memory of his wife, Mumtaz Mahal, known for its white marble construction.</p>
+                        <a href="https://dpl.gov.in/dpl-branche" class="btn">Read More</a>
+                    </article>
+
+                    <article class="site">
+                        <h3>Qutub Minar and its Monuments</h3>
+                        <img src="https://images.pexels.com/photos/14105979/pexels-photo-14105979.jpeg" alt="Qutub Minar" class="site-image" loading="lazy">
+                        <p>An early example of Indo-Islamic architecture, the Qutub Minar is a 73-meter tall tower in Delhi.</p>
+                        <a href="https://dpl.gov.in/dpl-branche" class="btn">Read More</a>
+                    </article>
+
+                    <article class="site">
+                        <h3>Mountain Railways of India</h3>
+                        <img src="https://www.esikkimtourism.in/wp-content/uploads/2019/05/shimla-kalka-maill.jpg" alt="Mountain Railways of India" class="site-image" loading="lazy">
+                        <p>Includes Darjeeling Himalayan Railway, Nilgiri Mountain Railway, and Kalka-Shimla Railway, showcasing engineering marvels amidst scenic landscapes.</p>
+                        <a href="https://dpl.gov.in/dpl-branches" class="btn">Read More</a>
+                    </article>
+
+                    <article class="site">
+                        <h3>Moidams – the Mound-Burial System of the Ahom Dynasty</h3>
+                        <img src="https://whc.unesco.org/uploads/thumbs/site_1711_0018-750-750-20240531144908.jpg" alt="Moidams" class="site-image" loading="lazy">
+                        <p>This site in Assam represents the burial customs of the Ahom kings from the 13th to the 19th century.</p>
+                        <a href="https://dpl.gov.in/dpl-branches" class="btn">Read More</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Natural Heritage Sites -->
+            <section class="heritage-section" id="natural-heritage">
+                <h2>Natural Heritage Sites</h2>
+                <div class="site-list">
+                    <article class="site">
+                        <h3>Kaziranga National Park</h3>
+                        <img src="https://www.savaari.com/blog/wp-content/uploads/2024/08/18.-kaziranga-national-park.jpg" alt="Kaziranga National Park" class="site-image" loading="lazy">
+                        <p>Home to two-thirds of the world's Indian one-horned rhinoceroses, this park is also a haven for tigers and elephants.</p>
+                        <a href="https://dpl.gov.in/dpl-branches.php" class="btn">Read More</a>  
+                    </article>
+
+                    <article class="site">
+                        <h3>Manas Wildlife Sanctuary</h3>
+                        <img src="https://i.pinimg.com/736x/73/47/86/734786303199002963b5e6e47eabfe77.jpg" alt="Manas Wildlife Sanctuary" class="site-image" loading="lazy">
+                        <p>A biodiversity hotspot with a rich variety of wildlife, including the golden langur and pygmy hog.</p>
+                        <a href="https://dpl.gov.in/dpl-branches.php" class="btn">Read More</a>
+                    </article>
+
+                    <article class="site">
+                        <h3>Nanda Devi and Valley of Flowers National Parks</h3>
+                        <img src="https://i.pinimg.com/736x/10/d7/21/10d72183b91c3431c157d80dea1232ea.jpg" alt="Nanda Devi and Valley of Flowers" class="site-image" loading="lazy">
+                        <p>Comprises two parks of contrasting beauty; one with high peaks, the other with an array of wildflowers.</p>
+                        <a href="https://dpl.gov.in/dpl-branches.php" class="btn">Read More</a>
+                    </article>
+
+                    <article class="site">
+                        <h3>Khangchendzonga National Park</h3>
+                        <img src="https://i.pinimg.com/736x/6d/e6/fc/6de6fc6a0a14b297aa81d5479f278dda.jpg" alt="Khangchendzonga National Park" class="site-image" loading="lazy">
+                       
+                     <p>Encompassing the world's third-highest peak, this park is a blend of cultural heritage and extraordinary natural beauty.</p>
+                     <a href="https://dpl.gov.in/dpl-branches.php" class="btn">Read More</a>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Heritage Sites of India</p>
+    </footer>
+</body>
+</html>
