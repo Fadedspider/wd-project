@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Literature Abroad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgb(239, 114, 60);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact p {
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color:rgb(239, 114, 60) ;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Indian Literature Abroad</h1>
+    </header>
+    <ul><li style="background-color: rgb(248, 194, 70);"><a href="index.html" id="homeLink"> Home ></a>
+        <a href="publications.html" id="publicationsLink"> Publications ></a>
+        <a href="indianliteratureabroad.html" id="literatureLink"> Literature</a></li></ul>
+
+    <main>
+        <h2>About Indian Literature Abroad (ILA)</h2>
+        <img alt="Indian Literature Abroad" class="alignLeft marginR20" width="90%" height="500px" src="https://www.indiaculture.gov.in/sites/all/themes/moc/images/indian_literature.jpg" title="Indian Literature Abroad">
+        <p>With 22 scheduled languages, 122 regional languages, six classical languages (Sanskrit, Tamil, Kannada, Telugu, Malayalam, and Odia), thousands of mother tongues, and countless dialects, India boasts a unique linguistic and literary history. The different language clusters in India are distinctive but share a common heritage and core identity. Nurturing its plural and diverse traditions, emergent India is engaged in an act of constant and ongoing cultural translation and interpretation.</p>
+
+        <p>Novels, short fiction, poetry, and experimental writing are flourishing, along with a vigorous tradition in literary criticism. Seeking inspiration from their mother tongues, Indian writers combine contemporary reach with classical traditions. While Indian literature in English is widely read and appreciated, the vibrant writing in various Indian languages is not currently accessible to the rest of the world due to a lack of quality translations and focused promotion. ILA aims to correct this imbalance by projecting and promoting the plural Indian literatures internationally.</p>
+
+        <p>The ILA project has been initiated by the Ministry of Culture, Government of India, to support and facilitate translation and promotion of literary heritage and contemporary literature from the Indian languages into major foreign languages (especially those recognized by UNESCO).</p>
+
+        <p>Indian Literature Abroad (ILA) seeks to open windows to the polyphonic voices coming out of India. To achieve this goal, ILA is working on ongoing translation commissions, and also on workshops, collaborations, and fellowships. The books listed here are but a sampler of the incredible riches of contemporary Indian writing.</p>
+
+        <p>ILA has a distinguished Advisory Committee, with Dr. U.R. Ananthamurthy as the chairman, and including well-known names from the fields of literature, publishing, and translation. Namita Gokhale, writer, publisher, and co-director of the Jaipur Literature Festival, is member-secretary of the project.</p>
+
+        <p>All contracts and negotiations will be carried out with the support of ILA.</p>
+
+        <div class="contact">
+            <h2>Contact Information</h2>
+            <p>For enquiries on rights and translation proposals and submissions, contact:</p>
+            <p><strong>Shubhda Khanna</strong></p>
+            <p>Email: indianliteratureabroad[at]gmail[dot]com</p>
+            <p>Tel: +91-11-23381498</p>
+            <p>Address:</p>
+            <p>Indian Literature Abroad<br>
+            Ministry of Culture<br>
+            Central Secretariat Library<br>
+            G Wing, Shastri Bhawan<br>
+            New Delhi, India<br>
+            110001</p>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 Ministry of Culture
+    </footer>
+    <script>document.addEventListener("DOMContentLoaded", () => {
+  
+        const links = document.querySelectorAll("ul li a");
+        links.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add("highlight");
+            }
+        });
+    
+       
+        const contactLink = document.querySelector(".contact strong");
+        if (contactLink) {
+            contactLink.addEventListener("click", () => {
+                alert("Thank you for reaching out! We will get back to you shortly.");
+            });
+        }
+    
+        
+        const contactSection = document.querySelector(".contact");
+        if (contactSection) {
+            const toggleButton = document.createElement("button");
+            toggleButton.textContent = "Toggle Contact Info";
+            toggleButton.style.marginTop = "10px";
+            toggleButton.addEventListener("click", () => {
+                contactSection.style.display = contactSection.style.display === "none" ? "block" : "none";
+            });
+            contactSection.parentElement.insertBefore(toggleButton, contactSection);
+        }
+    
+       
+        alert("Welcome to Indian Literature Abroad! Explore the richness of Indian literature.");
+    });
+    
+    </script>
+</body>
+</html>
