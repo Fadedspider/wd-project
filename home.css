@@ -1,0 +1,345 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ADD8E6;
+}
+
+    html body {
+        width: 100%;
+        height: 100%;
+        padding: 20;
+        margin: 10px;
+        overflow-x: hidden;
+    }
+
+
+header {
+    width: 100%;
+    border-bottom: 4px solid red;
+}
+
+/* Top Bar Styling */
+.top-bar {
+    background-color: #003366;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+.top-bar .updates {
+    font-weight: bold;
+}
+
+.top-bar .accessibility a {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+/* Main Header Styling */
+.header {
+    background-color: chocolate; /* Replace with your flag image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the flag */
+    background-repeat: no-repeat; /* Prevents tiling */
+    color: white; /* Adjust text color for better contrast */
+    padding: 20px;
+    text-align: center;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png'); /* Replace with your flag image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the flag */
+    background-repeat: no-repeat; /* Prevents tiling */
+    color: white; /* Adjust text color for better contrast */
+    padding: 20px;
+    text-align: center;
+}
+
+.main-header .logo h1 {
+    margin: 0;
+    color: #003366;
+    font-size: 24px;
+}
+
+.main-header .logo span {
+    display: block;
+    font-size: 16px;
+    color: #666;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #00447c;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #002a5c;
+}
+
+.ministry-logo {
+    text-align: center;
+}
+
+.ministry-logo img {
+    height: 50px;
+}
+
+.ministry-logo p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: red;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #cc0000;
+    border-radius: 3px;
+}
+
+ul li ul.dropdown li{
+    display:block;
+}
+
+ul li ul.dropdown{
+    width: auto;
+    background: #cc0000;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+nav ul li:hover ul.dropdown {
+    display:list-item;
+    background-color: #cc0000;
+    border-radius: 3px;
+}
+
+
+
+
+
+
+.slider-wrapper {
+    display: inline-block;
+	position: relative;
+	width: 60%;
+	margin:0;
+}
+
+.slider {
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+	border-radius: 1.0rem;
+	-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slider img {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
+}
+
+.slider-nav {
+	display: flex;
+	column-gap: 1rem;
+	position: absolute;
+	bottom: 1.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.slider-nav a {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0.75;
+	transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+	opacity: 1;
+}
+
+
+
+.bottom-slider {
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 10px 0;
+    overflow: hidden; /* Ensures clean clipping */
+    position: relative;
+    border-top: 1px solid #ddd;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: space-around; /* Equal spacing */
+    align-items: center;
+    gap: 20px; /* Space between images */
+    animation: slide 10s linear infinite; /* Optional sliding effect */
+}
+
+.slide img {
+    max-width: 100px; /* Adjust image size */
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Keyframe animation for sliding effect */
+/* @keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+} */
+
+footer {
+    background-color: #002855; /* Dark blue background color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-logos img {
+    height: 40px; /* Adjust logo size */
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.main-container {
+    display: flex; /* Creates a side-by-side layout */
+    align-items: flex-start; /* Aligns items to the top */
+    padding: 20px;
+    gap: 20px; /* Adds space between the section and aside */
+}
+
+.welcome {
+    flex: 2; /* Makes the welcome section take up more space */
+    max-width: 60%; /* Adjusts the maximum width */
+}
+
+.welcome h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+
+.container {
+    
+    display: inline-block;
+    width: 500px;
+    margin-left: 50px;
+    height: 100px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    background-color: #283646;
+    color: white;
+    padding: 1px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu-item img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.menu-item1 img {
+    width: 100%; /* Make the image cover the container */
+    height: 100%; /* Ensure it occupies the full container */
+    object-fit: contain; /* Keep the entire image within the container */
+}
+
+
+.menu-item.active {
+    border-left: 5px solid red;
+}
+
+#watermark { position: fixed; bottom: 0; right: 0; z-index:999; }

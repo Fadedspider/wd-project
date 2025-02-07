@@ -3,239 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History - Ministry of Culture</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <title>History</title>
+    <link rel="stylesheet" href="history.css">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 40px;
-            background: linear-gradient(135deg, #ff6b01, #ff8533);
-            min-height: 100vh;
-            border: 15px solid #1a237e; /* Main page border */
-            box-sizing: border-box;
+        /* Enhanced Animations */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px;
-            border: 5px solid #fff; /* Container border */
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.1);
-            position: relative;
+        @keyframes slide-up {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        .content-header {
-            background: linear-gradient(45deg, #1a237e, #283593);
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            border: 3px solid #fff;
-            position: relative;
+        @keyframes slide-down {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        .title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        @keyframes scale-up {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
-        .history-table {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 3px solid #1a237e;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        /* Apply Animations */
+        .breadcrumb, .menu-item, .menu-item1, h2, h3, p, ul {
+            animation: fade-in 1s ease-out;
         }
 
-        .history-table table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
+        .top-bar, .main-header, nav {
+            animation: slide-down 0.8s ease-out;
         }
 
-        .history-table th {
-            background: linear-gradient(45deg, #1a237e, #283593);
-            color: white;
-            padding: 20px;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            text-align: left;
-            border-bottom: 3px solid #ff6b01;
+        .search-bar input:focus {
+            animation: scale-up 0.3s ease-out;
         }
 
-        .history-table td {
-            padding: 20px;
-            border-bottom: 1px solid #e0e0e0;
-            border-right: 1px solid #e0e0e0;
+        /* Hover Effects */
+        .menu-item:hover, .menu-item1:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
-        .history-table td:last-child {
-            border-right: none;
+        .search-bar button:hover {
+            background-color: #002a5c;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
         }
 
-        .history-table tr:last-child td {
-            border-bottom: none;
+        nav ul li a:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
         }
 
-        .history-table tr:nth-child(even) {
-            background-color: #f8f9fa;
+        /* Scroll Animations */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        .history-table tr:hover {
-            background-color: #fff5e6;
-            transition: background-color 0.3s ease;
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Decorative corners */
-        .container:before,
-        .container:after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border: 3px solid #1a237e;
-        }
-
-        .container:before {
-            top: 10px;
-            left: 10px;
-            border-right: none;
-            border-bottom: none;
-        }
-
-        .container:after {
-            bottom: 10px;
-            right: 10px;
-            border-left: none;
-            border-top: none;
-        }
-
-        /* Column borders */
-        .history-table th:first-child,
-        .history-table td:first-child {
-            border-right: 2px solid #e0e0e0;
-        }
-
-        /* Responsive design */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            body {
-                padding: 20px;
-                border-width: 10px;
+            .main-header {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .container {
-                padding: 15px;
-                border-width: 3px;
+            .search-bar {
+                margin-top: 10px;
             }
 
-            .content-header {
-                padding: 20px;
-            }
-
-            .title {
-                font-size: 2rem;
-            }
-
-            .history-table th,
-            .history-table td {
-                padding: 15px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-                border-width: 5px;
-            }
-
-            .container {
-                padding: 10px;
-            }
-
-            .history-table th,
-            .history-table td {
-                padding: 10px;
-                font-size: 12px;
+            nav ul {
+                flex-direction: column;
+                gap: 5px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="content-header">
-            <h2 class="title">History</h2>
-        </div>
 
-        <div class="history-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Allocation in respect of Department or Ministry of Culture</th>
-                        <th>Date of Notification</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>M/o Scientific Research and Culture Affairs</td>
-                        <td>Since 1961</td>
-                    </tr>
-                    <tr>
-                        <td>Sanskriti Vibhag</td>
-                        <td>May 3, 1971</td>
-                    </tr>
-                    <tr>
-                        <td>D/o Culture</td>
-                        <td>June 17, 1971</td>
-                    </tr>
-                    <tr>
-                        <td>D/o Culture under M/o Education & Culture</td>
-                        <td>September 17, 1979</td>
-                    </tr>
-                    <tr>
-                        <td>D/o Culture under M/o Culture Affairs</td>
-                        <td>August 13, 1985</td>
-                    </tr>
-                    <tr>
-                        <td>D/o Culture under M/o HRD</td>
-                        <td>September 25, 1985</td>
-                    </tr>
-                    <tr>
-                        <td>D/o Culture under M/o Culture, Youth Affairs & Sports</td>
-                        <td>October 15, 1999</td>
-                    </tr>
-                    <tr>
-                        <td>D/o Culture under M/o Tourism & Culture</td>
-                        <td>May 27, 2000</td>
-                    </tr>
-                    <tr>
-                        <td>M/o Culture</td>
-                        <td>September 6, 2001</td>
-                    </tr>
-                    <tr>
-                        <td>D/o Culture under M/o Tourism & Culture</td>
-                        <td>December 21, 2001</td>
-                    </tr>
-                    <tr>
-                        <td>M/o Culture</td>
-                        <td>May 27, 2004</td>
-                    </tr>
-                    <tr>
-                        <td>D/o Culture under M/o Tourism & Culture</td>
-                        <td>February 16, 2006</td>
-                    </tr>
-                    <tr>
-                        <td>M/o Culture</td>
-                        <td>June 1, 2006</td>
-                    </tr>
-                </tbody>
-            </table>
+    <header>
+        <div class="top-bar">
+            <div class="updates">Latest Updates</div>
+            <div class="accessibility">
+                <a href="#">Screen Reader Access</a>
+                <a href="#">हिंदी</a>
+                <a href="#">A+</a>
+                <a href="#">A-</a>
+                <a href="#">High Contrast</a>
+            </div>
         </div>
+        <div class="main-header">
+            <div class="logo">
+                <h1>CSL</h1>
+                <span>Central Secretariat Library</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>🔍</button>
+            </div>
+            <div class="ministry-logo">
+                <img src="https://www.csl.nic.in/assets/images/MOC_Final_LOGO.png" alt="Ministry of Culture Logo">
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li>
+                <a href="csl_about.html">About Us</a>
+                <ul class="dropdown">
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="https://www.csl.nic.in/page/innerpage/policy.php">Policy</a></li>
+                    <li><a href="https://www.csl.nic.in/page/innerpage/csl-mission.php">CSL Mission</a></li>
+                    <li><a href="https://www.csl.nic.in/page/innerpage/csl-vision.php">CSL Vision</a></li>
+                    <li><a href="https://www.csl.nic.in/upload/cmsfiles/Organization_Chart_15_10_24.pdf">Organisation Chart</a></li>
+                </ul>
+                </li>
+                <li><a href="https://www.csl.nic.in/page/innerpage/collection.php">Collection</a></li>
+                <li><a href="#">Sections</a></li>
+                <li><a href="#">Digital Repository</a>
+                    <ul class="dropdown">
+                        <li><a href="https://www.csl.nic.in/page/innerpage/sections.php">Gazette of India</a></li>
+                        <li><a href="https://www.csl.nic.in/page/innerpage/committee-commission-report.php">Committe commission report</a></li>
+                        <li><a href="https://www.csl.nic.in/page/innerpage/rare-books.php">Rare books</a></li>
+                    </ul>
+                </li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="https://www.csl.nic.in/page/innerpage/library-rules.php">Library Rules</a></li>
+                <li><a href="https://www.csl.nic.in/page/innerpage/quick-links.php">Quick Links</a></li>
+                <li><a href="">Contact Us</a>
+                    <ul class="dropdown">
+                        <li><a href="https://www.csl.nic.in/page/innerpage/enquiry.php">Plan your visit</a></li>
+                        <li><a href="https://www.csl.nic.in/page/innerpage/ask-the-librarian.php">Ask the Librarian</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mt20" id="skip">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb10">
+                <li><a href="csl_home.html">Home/</a></li>
+                <li class="breadcrumb-item">
+                    <a href="https://www.csl.nic.in/page/innerpage/about-us.php">About Us</a>
+                </li>
+                <li class="breadcrumb-item active">History</li>
+            </ol>
+        </nav>
     </div>
+
+    <section class="some-container">
+        <div class="container">
+            <div class="menu-item scroll-animation">
+                <h2>HISTORY</h2>
+            </div>
+            <div class="menu-item1 scroll-animation">
+                <h3><b>Historical Genesis</b></h3>
+                <p>Central Secretariat Library (CSL) under the Ministry of Culture is one of the largest tangible treasures of knowledge next to National Library, Kolkata for Indian and foreign document resources. CSL’s resources are an amalgamation of many old institutions including the resources of Imperial Secretariat Library, Calcutta that came into existence in 1891 during the period of Lord Curzon and validated by the Imperial Library Act of 1901. The Act stated that 'It was intended that it should be a library of reference, a working place for students and repository of material for the future historians of India, in which, so far as possible every work written about India at any time can be seen and read'. F.W. Forester, Curator of the Imperial Records Office, assembled about one thousand volumes lying about in the Writer’s Building, Calcutta received under the press and Registration of Books Act, 1867. This collection along with variety of collections belonging to other secretariat libraries located in that building was named the Imperial Library which was inaugurated on 11th May 1891. The collection of the Home Department was the most important collection which merged with the Imperial Library. Books formerly belonging to the libraries of East India College, Fort William College, and the East India Company Board in London formed part of the collection. When under the Imperial Library Act, a new Imperial Library was established, the entire collection of the erstwhile Imperial Records Office was not transferred to new library rather a portion of the collection was with the Imperial Secretariat Library, to distinguish it from the Imperial Library, and which continued to function in the Writers’ Building.</p>
+                <p>The Imperial Secretariat Library was transferred to Delhi in 1912 with the shifting of the Capital to Delhi and was housed in the Old Secretariat Building, Civil Lines Delhi. In 1913, part of the collection was moved to Shimla Secretariat. With the inauguration of the new Secretariat in New Delhi on 10th February 1931, the Imperial Secretariat Library was moved into North Block, and the Secretariat Library which was functioning in Shimla was also amalgamated with the Imperial Secretariat Library. On 1st April 1948, the library was named as Central Secretariat Library. In 1969 the Library was shifted to the newly constructed Shastri Bhawan, housing the Ministry of Education, the 'G' wing of the building was allotted to CSL.</p>
+
+                <h3><b>ADMINISTRATIVE SETUP</b></h3>
+                <p>During 1958-59, CSL was under the control of the Central Education Library of the post independence period, and was earlier known as Bureau of Education Library under the Bureau of Education, Department of Education, Health and Lands during the imperial government. It was shifted to North Block in 1933. Few more mergers took place. UNESCO Library was merged with CSL in 1949, Scientific Research and Cultural Affairs library was merged in 1950, and rare and valuable collection of about 1600 volumes of distinguished personalities and reference books was donated by Sir G. Friendly Shiras to the CSL.</p>
+                <p>In 1972, to commemorate the quadri-centenary of Goswami Tulsi Das, an eminent saint poet of Indian literature, a Regional Language Library was set-up. Another branch library at R.K. Puram was established to provide readers service to the government servant working in R.K. Puram. Till 1971 the CSL was under the control of the Department of Education, Ministry of Education and in 1972 it was shifted to Department of Culture which was part of the Ministry of Education, then Ministry of Human Resource Development and now under the Ministry of Culture.</p>
+                <p>Professional Staff Structure of CSL and its Branches:</p>
+                <ul>
+                    <li>Director</li>
+                    <li>Library and Information Officer</li>
+                    <li>Assistant Library and Information Officer (General)</li>
+                    <li>Assistant Library and Information Officer (Language)</li>
+                    <li>Library and Information Assistants</li>
+                    <li>Library Clerks</li>
+                    <li>Library Attendants</li>
+                    <li>Janitors</li>
+                    <li>Other Administrative Staff</li>
+                </ul>
+                <p>CSL is one of the offices of the Ministry of Culture and its budgetary allocation are being done as part of the Secretarial Expenditure. The Bureau Head is the Joint Secretary looking after the affairs of the Libraries under the Ministry of Culture. All financial approvals are being routed through the Bureau Head to the Internal Finance Division (IFD) for its concurrence. The salary component is part of the Department’s expenditure and all service matters and personal file of individual employee is being handled by the Library Section of the Department. The overall day to day control and management of the library is in the hands of the Director, CSL.</p>
+
+                <h3><b>COLLECTION DEVELOPMENT</b></h3>
+                <p>As on date CSL has a collection of about 8.5 lakhs printed and non-printed documents organized into different viable divisions. CSL has two more branches located in Tulsi Sadan at Bhawalpur House, which has about 2.25 lakhs strong collection in Hindi and other Indian official language and a branch at R.K. Puram having a collection of 29054 documents to cater to the needs of government employees. Tulsi Sadan Library is temporarily closed as the National School of Drama is constructing new building.</p>
+                <p>The resources of Central Secretariat Library have been divided into following units/ divisions:</p>
+                <!-- Here you would continue with more detailed descriptions of each division -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logos">
+                <!-- Add logos here -->
+            </div>
+            <div class="footer-links">
+                <a href="#">RTI</a> |
+                <a href="#">Help</a> |
+                <a href="#">Site Map</a> |
+                <a href="#">Archives</a> |
+                <a href="#">Disclaimer</a> |
+                <a href="#">Terms & Conditions</a> |
+                <a href="#">Feedback</a> |
+                <a href="#">Copyright Policy</a> |
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Hyper Linking Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Animation Trigger
+        const scrollAnimations = document.querySelectorAll('.scroll-animation');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        scrollAnimations.forEach(animation => {
+            observer.observe(animation);
+        });
+    </script>
 </body>
 </html>
